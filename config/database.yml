@@ -13,8 +13,9 @@ development:
   encoding: unicode
   database: fdtgroup_development
   pool: 5
+  host: localhost
   username: fdtgroup
-  password:
+  password: fdtpasswordgroup
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -39,13 +40,15 @@ test:
   encoding: unicode
   database: fdtgroup_test
   pool: 5
+  host: localhost
   username: fdtgroup
-  password:
+  password: fdtpasswordgroup
 
 production:
   adapter: postgresql
   encoding: unicode
   database: fdtgroup_production
   pool: 5
+  host: localhost
   username: fdtgroup
-  password:
+  password: fdtpasswordgroup
