@@ -7,6 +7,8 @@ ruby '1.8.7'
 gem 'rails', '3.0.7'
 gem 'rake', '0.8.7'
 gem 'pg'
+gem 'will_paginate', '~> 3.0'
+gem 'bcrypt-ruby', '3.0.1'
 
 group :production do
   gem 'rails_12factor'
