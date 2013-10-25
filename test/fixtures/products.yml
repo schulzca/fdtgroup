@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  manufacturer_id: 1
+  protocol_id: 1
+  os_id: 1
+  device_type_id: 1
+  device_version: MyString
+  dtm_version: MyString
+  specification: MyString
+
+two:
+  manufacturer_id: 1
+  protocol_id: 1
+  os_id: 1
+  device_type_id: 1
+  device_version: MyString
+  dtm_version: MyString
+  specification: MyString
