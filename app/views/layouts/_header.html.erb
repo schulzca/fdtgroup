@@ -7,5 +7,12 @@
   </div>
   <div id="header_search">
     Open access to device intelligence
+    <div id="sign_in_out">
+      <% if signed_in? %>
+        <%= link_to "Sign Out", signout_path, :method => :delete %>
+      <% else %>
+        <%= link_to "Sign In", signin_path %>
+      <% end %>
+    </div>
   </div>
 </div>

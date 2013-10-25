@@ -1,0 +1,15 @@
+<%= form_tag products_path, :method => :get do %>
+  <table>
+    <tr><td>Manufacturer</td><td>Device Type</td><td>Protocol</td></tr>
+    <tr>
+      <td><%= select("filter", "manufacturer_id", @manufacturers,
+                    :selected => @manufacturer) %></td>
+      <td><%= select("filter", "device_type_id", @device_types,
+                    :selected => @device_type) %></td>
+      <td><%= select("filter", "protocol_id", @protocols, 
+                    :selected => @protocol) %></td>
+      <td><%= submit_tag "Filter" %></td>
+    </tr>
+  </table>
+<% end %>
+

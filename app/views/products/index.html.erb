@@ -1,0 +1,38 @@
+<h1>Certified DTM's Catalog</h1>
+
+<%= render :partial => "filter_form" %>
+
+<% if @products.any? %>
+  <%= will_paginate @products %>
+  <table id="product_table">
+    <tr> 
+      <th><%= header_link "Manufacturer", "manufacturer_id" %></th>
+      <th><%= header_link "Device/Version", "device_version" %></th>
+      <th><%= header_link "DTM/Version", "dtm_version" %></th>
+      <th><%= header_link "Device Type", "device_type_id" %></th>
+      <th><%= header_link "Protocol", "protocol_id" %></th>
+      <th><%= header_link "Specification", "specification" %></th>
+      <th>OS</th>
+      <th>Certificate</th>
+      <th>Download</th>
+    </tr>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.manufacturer.name, "#" %></td>
+        <td><%= product.device_version %></td>
+        <td><%= product.dtm_version %></td>
+        <td><%= product.device_type.name %></td>
+        <td><%= product.protocol.name %></td>
+        <td><%= product.specification %></td>
+        <td><%= product.oses.map{|os|os.name}.join(", ") %></td>
+        <td><%= link_to "Certificate", "#" %></td>
+        <td><%= link_to(image_tag("download.png"), product_path(product)) %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @products %>
+<% else %>
+  <%= render :partial => 'no_results' %>
+<% end %>
+    
+

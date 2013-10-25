@@ -1,1 +1,4 @@
-This will be the content.
+<% flash.each do |key,value| %>
+  <div class="<%= key %>"><%= value %></div>
+<% end %>
+<%= yield %>
