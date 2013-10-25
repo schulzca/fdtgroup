@@ -15,7 +15,11 @@ class ProductsController < ApplicationController
     end
 
     #Get product list
-    @products = Product.order(:id)
+    if params[:order]
+      @products = @products.send(params[:order]) 
+    else
+      @products = Product.order(:id)
+    end
 
     #Apply filters
     if params[:filter]
@@ -23,10 +27,7 @@ class ProductsController < ApplicationController
         @products = @products.where(key => value) unless value.blank?
       end
     end
-
-    #Apply sort
-    @products = @products.send(params[:order]) if params[:order]
-
+    
     #Paginate
     @products = @products.paginate(:page => params[:page],
                                    :per_page => (params[:per_page] or 30))
