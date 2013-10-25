@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
 
     #Get product list
     if params[:order]
-      @products = @products.send(params[:order]) 
+      @products = Product.send(params[:order]) 
     else
       @products = Product.order(:id)
     end
